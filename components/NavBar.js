@@ -32,10 +32,14 @@ export default function NavBar() {
               <Link href={"/Learnings"}>Learnings ✨</Link>
               <ul className="p-2">
                 <li>
-                  <Link href={"/Learnings/of-life"}>Learnings of life</Link>
+                  <Link href={"/Learnings"}>Learnings of life</Link>
                 </li>
                 <li>
-                  <Link href={"/Learnings/of-SiO2"}>Learnings on SiO2</Link>
+                  <Link
+                    href={{ pathname: "/Learnings", query: { page: "SiO2" } }}
+                  >
+                    Learnings on SiO2
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -56,12 +60,15 @@ export default function NavBar() {
             </Link>
           </li>
           <li>
-            <Link href={"/Learnings/of-life"} className="ml-2 mr-2">
+            <Link href={"/Learnings"} className="ml-2 mr-2">
               ✨ Learnings of life
             </Link>
           </li>
           <li>
-            <Link href={"/Learnings/on-SiO2"} className="ml-2 mr-2">
+            <Link
+              href={{ pathname: "/Learnings", query: { page: "SiO2" } }}
+              className="ml-2 mr-2"
+            >
               Learnings on SiO2 ✨
             </Link>
           </li>
