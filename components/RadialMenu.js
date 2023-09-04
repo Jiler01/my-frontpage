@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Menu(props) {
   return (
-    <>
+    <div className="bg-transparent">
       <span className="radialspan">
         <span className="radialspan"></span>
       </span>
@@ -38,6 +38,6 @@ export default function Menu(props) {
           ></div>
         </Link>
       </div>
-    </>
+    </div>
   );
 }

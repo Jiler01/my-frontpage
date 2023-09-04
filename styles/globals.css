@@ -64,7 +64,7 @@
   left: 22.5%;
   transform-origin: -10% -10%;
   transform: scale(1);
-  box-shadow: 0 0 0 5vmin hsl(var(--a));
+  box-shadow: 0 0 0 5vmin hsl(var(--s));
 }
 
 .radialspan {
@@ -82,7 +82,7 @@
   position: absolute;
   width: 60%;
   height: 3px;
-  background: hsl(var(--a));
+  background: hsl(var(--s));
   left: 20%;
   top: 50%;
   border-radius: 0;

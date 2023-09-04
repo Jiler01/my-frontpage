@@ -6,9 +6,9 @@ export default function Page() {
       <RadialMenu
         links={[
           "",
-          "/Learnings-✨",
-          "/Computers-and-me-🦾",
-          "/Contact-me-🚀",
+          "/Learnings",
+          "/Computers-and-me",
+          "/Contact-me",
           "/Who-am-I",
         ]}
         images={[

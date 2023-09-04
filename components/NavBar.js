@@ -26,10 +26,10 @@ export default function NavBar() {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link href={"/Computers-and-me-🦾"}>Computers and me 🦾</Link>
+              <Link href={"/Computers-and-me"}>Computers and me 🦾</Link>
             </li>
             <li>
-              <Link href={"/Learnings-✨"}>Learnings ✨</Link>
+              <Link href={"/Learnings"}>Learnings ✨</Link>
               <ul className="p-2">
                 <li>
                   <Link href={"/Learnings/of-life"}>Learnings of life</Link>
@@ -40,7 +40,7 @@ export default function NavBar() {
               </ul>
             </li>
             <li>
-              <Link href={"/Contact-me-🚀"}>Contact me ! 🚀</Link>
+              <Link href={"/Contact-me"}>Contact me ! 🚀</Link>
             </li>
           </ul>
         </div>
@@ -51,29 +51,29 @@ export default function NavBar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link href={"/Computers-and-me-🦾"} className="ml-2 mr-2">
+            <Link href={"/Computers-and-me"} className="ml-2 mr-2">
               💪 Computers and me 🦾
             </Link>
           </li>
           <li>
-            <Link href={"/Learnings-✨/of-life"} className="ml-2 mr-2">
+            <Link href={"/Learnings/of-life"} className="ml-2 mr-2">
               ✨ Learnings of life
             </Link>
           </li>
           <li>
-            <Link href={"/Learnings-✨/of-SiO2"} className="ml-2 mr-2">
+            <Link href={"/Learnings/on-SiO2"} className="ml-2 mr-2">
               Learnings on SiO2 ✨
             </Link>
           </li>
           <li>
-            <Link href={"/Contact-me-🚀"} className="ml-2 mr-2">
+            <Link href={"/Contact-me"} className="ml-2 mr-2">
               🚀 Contact me ! 🚀
             </Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn btn-accent" href={"/Who-am-I"}>
+        <Link className="btn btn-primary" href={"/Who-am-I"}>
           Who am I ?
         </Link>
       </div>
