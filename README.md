@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project using [TailwindCss](https://tailwindcss.com/) and [daisyUI](https://daisyui.com/)
+This is a [Next.js](https://nextjs.org/) project using [TailwindCSS](https://tailwindcss.com/) and [daisyUI](https://daisyui.com/)
 
 ## Terms and conditions
 You can customize it as you want, but publishing it with my personal informations is not allowed.
