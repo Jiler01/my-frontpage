@@ -9,7 +9,7 @@ The usage of my articles is allowed, not including the content from any third-pa
 ```bash
 git clone https://github.com/Jiler01/my-frontpage.git
 cd my-frontpage
-npm run dev # or yarn dev #or pnpm dev
+npm run dev #or yarn dev #or pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
