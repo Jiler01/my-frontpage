@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 export function GET() {
-  return NextResponse.json(DATA);
+  return NextResponse.json(learnings);
 }
 
-const DATA = {
+export const learnings = {
   Life: {
     title: <>Fisrt article !!</>,
     content: (
