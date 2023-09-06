@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-export default function () {
+export default function Page() {
   return (
     <>
       <button
@@ -27,10 +27,10 @@ export default function () {
               server, but the server could not find what was requested. The
               error may also be used when a server does not wish to disclose
               whether it has the requested information. The website hosting
-              server will typically generate a "404 Not Found" web page when a
-              user attempts to follow a broken or dead link; hence the 404 error
-              is one of the most recognizable errors encountered on the World
-              Wide Web. - Wikipedia
+              server will typically generate a &quot404 Not Found&quot web page
+              when a user attempts to follow a broken or dead link; hence the
+              404 error is one of the most recognizable errors encountered on
+              the World Wide Web. - Wikipedia
             </div>
           </div>
           <div className="chat chat-end">

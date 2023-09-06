@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Page() {
   return (
     <>
@@ -21,7 +23,11 @@ function Card() {
   return (
     <div className="hero min-h-screen bg-base">
       <div className="hero-content flex-col lg:flex-row">
-        <img src="/Avatar.jpg" className="max-w-sm shadow-2xl rounded-full" />
+        <Image
+          alt="A handsome Rehan smiling at you"
+          src="/Avatar.jpg"
+          className="max-w-sm shadow-2xl rounded-full"
+        />
         <div>
           <h1 className="text-5xl font-bold">Rehan Jiva Lila</h1>
           <p className="py-6 ">
@@ -33,8 +39,12 @@ function Card() {
             className="flex flex-row justify-evenly w-full flex-wrap"
             id="about-labels-div"
           >
-            {badges.map((x) => (
-              <div className="tooltip tooltip-bottom" data-tip={x[1]}>
+            {badges.map((x, index) => (
+              <div
+                key={index}
+                className="tooltip tooltip-bottom"
+                data-tip={x[1]}
+              >
                 <div>{x[0]} </div>
               </div>
             ))}

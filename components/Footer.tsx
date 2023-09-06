@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-export default function () {
+export default function Page() {
   return (
     <footer className="footer p-10 dark:bg-neutral dark:text-neutral-content bg-gray-100">
       <div>
