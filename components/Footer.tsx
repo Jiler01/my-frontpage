@@ -56,6 +56,14 @@ export default function Page() {
               height={25}
             />
           </a>
+          <a href="https://vercel.com/">
+            <Image
+              alt="vercel logo"
+              src={"/vercel.svg"}
+              width={25}
+              height={25}
+            />
+          </a>
         </div>
       </div>
     </footer>
