@@ -3,7 +3,7 @@ export function GET() {
   return NextResponse.json(learnings);
 }
 
-export const learnings = {
+const learnings = {
   Life: {
     title: <>Fisrt article !!</>,
     content: (
