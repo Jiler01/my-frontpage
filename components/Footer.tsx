@@ -59,7 +59,7 @@ export default function Page() {
           <a href="https://vercel.com/">
             <Image
               alt="vercel logo"
-              src={"/vercel.svg"}
+              src={"/vercel.png"}
               width={25}
               height={25}
             />
