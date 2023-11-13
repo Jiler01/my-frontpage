@@ -20,8 +20,8 @@ export default function Page() {
       .then((json) => setArticles(json))
       .catch((error) => console.error(error));
   }, []);
-
-  */ Flipping management -----------------------------------------------------------------------------
+*/
+  // Flipping management -----------------------------------------------------------------------------
   const defaultDeg =
     useSearchParams().get("page") === "SiO2" ? "rotateX(180deg)" : "";
   const [deg, setDeg] = useState(defaultDeg);
