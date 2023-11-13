@@ -83,27 +83,33 @@ export default function Page() {
 
       {articles ? (
         <div className="grid p-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          {Object.values(articles).map((article: any) => {
+          {Object.values(articles).map((article: any, index: any) => {
             return (
-              <div
-                className="card glass shadow-lg m-5"
-                style={{
-                  display:
-                    (deg == "" && article.category == "life") ||
-                    (deg != "" && article.category == "sio2") ||
-                    article.category == "" ||
-                    !article.category
-                      ? "block"
-                      : "none",
-                }}
-              >
-                <div className="card-body">
-                  <h2 className="card-title">{article.title}</h2>
-                  <p>{article.body}</p>
-                  <div className="flex flex-row justify-center">
-                    {article.badges.map((badge: any) => (
-                      <div className="badge mx-1 badge-outline">{badge}</div>
-                    ))}
+              <div key={index}>
+                <div
+                  className="card glass shadow-lg m-5"
+                  style={{
+                    display:
+                      (deg == "" && article.category == "life") ||
+                      (deg != "" && article.category == "sio2") ||
+                      article.category == "" ||
+                      !article.category
+                        ? "block"
+                        : "none",
+                  }}
+                >
+                  <div className="card-body">
+                    <h2 className="card-title">{article.title}</h2>
+                    <p>{article.body}</p>
+                    <div className="flex flex-row justify-center">
+                      {article.badges.map((badge: any, index: any) => (
+                        <div key={index}>
+                          <div className="badge mx-1 badge-outline">
+                            {badge}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
