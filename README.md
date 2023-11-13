@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project using [TailwindCSS](https://tai
 ## Terms and conditions
 You can customize it as you want, but publishing it with my personal informations is not allowed.
 The usage of property asset as any pictures of my own is not allowed.
-The usage of my articles is allowed, not including the content from any third-party entity, which is regulatedby its owner(s).
+The usage of my articles is allowed, not including the content from any third-party entity, which is ruled by its owner(s).
 
 ## Running it
 ```bash
