@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="min-h-screen bg-gradient-to-bl from-primary to-secondary">
+        <div className="min-h-screen bg-gradient-to-bl from-green-900 to-blue-900">
           <NavBar />
           {children}
         </div>

@@ -1,40 +1,27 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Page() {
-  const content = {
-    card1: {
-      title: <>Learnings of life</>,
-      text: (
-        <>
-          “The more I live, the more I learn. The more I learn, the more I
-          realize, the less I know.” (Michel Legrand) But if each one learns,
-          what happends to this knowledge after him ? This is why in this
-          section, I will share quotes, learnings and ressources that, I think,
-          would be useful to you, as they have been and might keep being to me
-          in the future.
-        </>
-      ),
+  const articles = [
+    {
+      title: "Heyyy hru doing ?",
+      body: "This is my first article which goes in both categories",
+      category: "",
+      badges: ["New post", "Placeholder"],
     },
-    card2: {
-      title: <>Learnings on SiO2</>,
-      text: (
-        <>
-          Silicon dioxide, or Si02, is one if not the main compound used for the
-          fabrication of processors, the heart of computers. <br /> I have a
-          realtionship with the laters that has its roots in some childhood
-          memories with my father, but since something like 2020 I started
-          exploring its cosmos, with the ambition to make a job of it, one day.
-          <br />
-          In this section, I will share some ressources and explanation that
-          could be useful to you, as they have been and might keep being to me
-          in the future.
-        </>
-      ),
-    },
-  };
-  // Flipping management -----------------------------------------------------------------------------
+  ];
+  /* Articles fetching -----------------------------------------------------------------------------
+  const [rticles, setArticles] = useState(null);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((json) => setArticles(json))
+      .catch((error) => console.error(error));
+  }, []);
+
+  */ Flipping management -----------------------------------------------------------------------------
   const defaultDeg =
     useSearchParams().get("page") === "SiO2" ? "rotateX(180deg)" : "";
   const [deg, setDeg] = useState(defaultDeg);
@@ -47,32 +34,87 @@ export default function Page() {
         setDeg("rotateX(180deg)");
     }
   };
+
   // HTML ---------------------------------------------------------------------------------------------
   return (
-    <div className="grid place-items-center">
-      <button className="btn m-10 glass" onClick={flip}>
-        Other Learnings
-      </button>
-      <div
-        className="m-10 h-max transform transition ease-in-out [transform-style:preserve-3d] duration-1000 [backface-visibility:hidden]"
-        style={{ transform: deg }}
-      >
-        <div className="card glass shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title">{content["card1"]["title"]}</h2>
-            <p>{content["card1"]["text"]}</p>
-          </div>
-        </div>
-        <div className="absolute inset-0 [transform:rotateX(180deg)] [transform-style:preserve-3d] duration-1000 [backface-visibility:hidden]">
+    <>
+      <div className="grid place-items-center p-3">
+        <button className="btn m-10 glass" onClick={flip}>
+          Other Learnings
+        </button>
+        <div
+          className="m-10 h-max transform transition ease-in-out [transform-style:preserve-3d] duration-1000 [backface-visibility:hidden]"
+          style={{ transform: deg }}
+        >
           <div className="card glass shadow-xl">
             <div className="card-body">
-              <h2 className="card-title">{content["card2"]["title"]}</h2>
-              <p>{content["card2"]["text"]}</p>
+              <h1 className="card-title">Learnings of life</h1>
+              <p>
+                “The more I live, the more I learn. The more I learn, the more I
+                realize, the less I know.” (Michel Legrand) But if each one
+                learns, what happends to this knowledge after him ? This is why
+                in this section, I will share quotes, learnings and ressources
+                that, I think, would be useful to you, as they have been and
+                might keep being to me in the future.
+              </p>
+            </div>
+          </div>
+          <div className="absolute h-max inset-0 [transform:rotateX(180deg)] [transform-style:preserve-3d] duration-1000 [backface-visibility:hidden]">
+            <div className="card glass shadow-xl">
+              <div className="card-body">
+                <h1 className="card-title">Learnings on SiO2</h1>
+                <p>
+                  Silicon dioxide, or Si02, is one if not the main compound used
+                  for the fabrication of processors, the heart of computers.{" "}
+                  <br /> I have a realtionship with the laters that has its
+                  roots in some childhood memories with my father, but since
+                  something like 2020 I started exploring its cosmos, with the
+                  ambition to make a job of it, one day.
+                  <br />
+                  In this section, I will share some ressources and explanation
+                  that could be useful to you, as they have been and might keep
+                  being to me in the future.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {/*Articles zone ---------------------------------------------------------------------------------*/}
-    </div>
+
+      {articles ? (
+        <div className="grid p-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          {Object.values(articles).map((article: any) => {
+            return (
+              <div
+                className="card glass shadow-lg m-5"
+                style={{
+                  display:
+                    (deg == "" && article.category == "life") ||
+                    (deg != "" && article.category == "sio2") ||
+                    article.category == "" ||
+                    !article.category
+                      ? "block"
+                      : "none",
+                }}
+              >
+                <div className="card-body">
+                  <h2 className="card-title">{article.title}</h2>
+                  <p>{article.body}</p>
+                  <div className="flex flex-row justify-center">
+                    {article.badges.map((badge: any) => (
+                      <div className="badge mx-1 badge-outline">{badge}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="grid place-items-center">
+          <span className="loading loading-ring loading-lg"></span>
+        </div>
+      )}
+    </>
   );
 }
