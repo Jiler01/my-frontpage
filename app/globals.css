@@ -22,7 +22,7 @@
   height: 47.5%;
   overflow: hidden;
   transform: scale(0.5) translateZ(0px);
-  background: #585247;
+  @apply bg-gradient-to-bl from-green-900 to-blue-900
 }
 .radialpart .radialbg {
   height: 100%;
@@ -64,7 +64,6 @@
   left: 22.5%;
   transform-origin: -10% -10%;
   transform: scale(1);
-  box-shadow: 0 0 0 5vmin hsl(var(--s));
 }
 
 .radialspan {
@@ -75,17 +74,18 @@
   width: 10vmin;
   height: 10vmin;
   border-radius: 100%;
-  background: #585247;
   transform: translateZ(0px);
+  @apply bg-gray-100 dark:bg-neutral
+  
 }
 .radialspan .radialspan {
   position: absolute;
   width: 60%;
   height: 3px;
-  background: hsl(var(--s));
   left: 20%;
   top: 50%;
   border-radius: 0;
+  @apply bg-neutral dark:bg-gray-100
 }
 .radialspan .radialspan:after,
 .radialspan .radialspan:before {
@@ -126,4 +126,8 @@
 
 #about-labels-div div div {
   @apply badge badge-accent hover:badge-outline py-3;
+}
+
+.inputText {
+  @apply input input-bordered w-full max-w-xs
 }

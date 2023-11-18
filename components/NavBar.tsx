@@ -81,7 +81,10 @@ export default function NavBar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn btn-primary" href={"/Who-am-I"}>
+        <Link
+          className="btn btn-ghost bg-green-900 hover:bg-green-800"
+          href={"/Who-am-I"}
+        >
           Who am I ?
         </Link>
       </div>

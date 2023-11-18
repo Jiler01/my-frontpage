@@ -1,26 +1,18 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
+import Article from "./article";
 
 export default function Page() {
-  const articles = [
-    {
-      title: "Heyyy hru doing ?",
-      body: "This is my first article which goes in both categories",
-      category: "",
-      badges: ["New post", "Placeholder"],
-    },
-  ];
-  /* Articles fetching -----------------------------------------------------------------------------
-  const [rticles, setArticles] = useState(null);
-
+  const [articles, setData] = useState(null);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => setArticles(json))
-      .catch((error) => console.error(error));
-  }, []);
-*/
+    fetch("/api")
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((error) => {
+        throw error;
+      });
+  });
   // Flipping management -----------------------------------------------------------------------------
   const defaultDeg =
     useSearchParams().get("page") === "SiO2" ? "rotateX(180deg)" : "";
@@ -83,38 +75,20 @@ export default function Page() {
 
       {articles ? (
         <div className="grid p-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          {Object.values(articles).map((article: any, index: any) => {
-            return (
-              <div key={index}>
-                <div
-                  className="card glass shadow-lg m-5"
-                  style={{
-                    display:
-                      (deg == "" && article.category == "life") ||
-                      (deg != "" && article.category == "sio2") ||
-                      article.category == "" ||
-                      !article.category
-                        ? "block"
-                        : "none",
-                  }}
-                >
-                  <div className="card-body">
-                    <h2 className="card-title">{article.title}</h2>
-                    <p>{article.body}</p>
-                    <div className="flex flex-row justify-center">
-                      {article.badges.map((badge: any, index: any) => (
-                        <div key={index}>
-                          <div className="badge mx-1 badge-outline">
-                            {badge}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {Object.values(articles).map((article: any, index: number) => (
+            <Article
+              key={index}
+              article={article}
+              display={
+                (deg == "" && article.category == "life") ||
+                (deg != "" && article.category == "sio2") ||
+                article.category == "" ||
+                !article.category
+                  ? "block"
+                  : "none"
+              }
+            />
+          ))}
         </div>
       ) : (
         <div className="grid place-items-center">
