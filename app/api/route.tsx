@@ -16,7 +16,7 @@ export async function POST(request: any) {
   if (valid) {
     delete body.password;
     const data = await prisma.article.create({ data: body });
-    return NextResponse.json({ status: 200 });
+    return NextResponse.json({ status: 201 });
   }
-  return NextResponse.json({ status: 201 });
+  return NextResponse.json({ status: 401 });
 }
