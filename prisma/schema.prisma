@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("/prisma/dev.db")
+  url      = "file:/prisma/dev.db"
 }
 
 model Article {
